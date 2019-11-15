@@ -1,36 +1,40 @@
 {
   "colors": {
-    "backgroundColor": "#ffffff",
-    "buttonTextColor": "#ffffff",
-    "buttonColor": "#ed225d",
-    "titleColor": "#ed225d"
+    "backgroundColor": "#333333",
+    "buttonTextColor": "#131010",
+    "buttonColor": "#dfd4d6",
+    "titleColor": "#f7f7fc"
   },
   "@@editor": [
     {
       "key": "colors",
-      "name": "Colors",
+      "name": "Leaderboard Graphics",
       "icon": "🎨",
       "source": "colors.json",
       "fields": [
         {
           "key": "backgroundColor",
           "name": "Background color",
-          "type": "color"
+          "type": "color",
+          "description": "The background color of the leaderboard page."
         },
         {
           "key": "titleColor",
           "name": "Title Color",
-          "type": "color"
+          "type": "color",
+          "description": "The color of the title of the leaderboard page."
         },
         {
           "key": "buttonColor",
-          "name": "Button Color",
-          "type": "color"
+          "name": "Entry Color",
+          "type": "color",
+          "description": "The background color of each score entry."
         },
         {
           "key": "buttonTextColor",
-          "name": "Button Text Color",
-          "type": "color"
+          "name": "Entry Text Color",
+          "type": "color",
+          "description": "The color of the text of each score entry."
         }
       ]
     }

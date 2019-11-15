@@ -1,0 +1,12 @@
+{
+    "quickstart": {
+        "items":[
+            "introScreen.titleContent",
+            "introScreen.descriptionContent",
+            "gameGraphics.bubbles",
+            "gameSettings.gridRows",
+            "gameSettings.gridColumns",
+            "gameSettings.maxShots"
+        ]
+    }
+}

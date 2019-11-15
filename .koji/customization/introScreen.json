@@ -1,0 +1,70 @@
+{
+  "introScreen": {
+    "titleContent": "Bubble Pop",
+    "titleColor": "#FFFFFF",
+    "descriptionColor": "#c7c1c1",
+    "descriptionContent": "-Match 3 or more bubbles!\n-Use the left and right arrow keys to aim. Use up to shoot (desktop).\n-Tap the bottom left and right sides of the screen to aim. Tap the top half of the screen to shoot (mobile).\n-Longer chains of bubbles give more points.\n-Bouncing bubbles off of walls gives double points.",
+    "backgroundImage": "",
+    "backgroundColor": "#252424",
+    "playContent": "Play",
+    "leaderboardContent": "Leaderboards"
+  },
+  "@@editor": [
+    {
+      "key": "introScreen",
+      "name": "Intro Screen",
+      "icon": "",
+      "source": "introScreen.json",
+      "fields": [
+        {
+          "key": "titleContent",
+          "name": "Title",
+          "description": "The title of your game",
+          "type": "text"
+        },
+        {
+          "key": "titleColor",
+          "name": "Title Color",
+          "description": "The color of the title text",
+          "type": "color"
+        },
+        {
+          "key": "descriptionContent",
+          "name": "Game Description / Instructions",
+          "description": "Instructions for your game",
+          "type": "textarea"
+        },
+        {
+          "key": "descriptionColor",
+          "name": "Description Color",
+          "description": "The color of the instructional text",
+          "type": "color"
+        },
+        {
+          "key": "backgroundImage",
+          "name": "Background Image",
+          "description": "Leave blank for no image; just a solid color",
+          "type": "image"
+        },
+        {
+          "key": "backgroundColor",
+          "name": "Background color",
+          "description": "The background color if no image is used",
+          "type": "color"
+        },
+        {
+          "key": "playContent",
+          "name": "Play button string",
+          "description": "Text for the play button",
+          "type": "string"
+        },
+        {
+          "key": "leaderboardContent",
+          "name": "Leaderboard button string",
+          "description": "Text for the leaderboard button",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

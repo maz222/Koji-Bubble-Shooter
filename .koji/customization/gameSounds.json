@@ -1,0 +1,49 @@
+{
+  "gameSounds": {
+    "shoot": "https://objects.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/i7340-ShootSound.mp3",
+    "bounce": "https://objects.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/qrvrs-BounceSound.mp3",
+    "match": "https://objects.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/6ukfg-MatchSound.mp3",
+    "addRows": "https://objects.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/ma1q7-RowsSound.mp3",
+    "music": ""
+  },
+  "@@editor": [
+    {
+      "key": "gameSounds",
+      "name": "Game Sounds",
+      "icon": "🎵",
+      "source": "gameSounds.json",
+      "fields": [
+        {
+          "key": "shoot",
+          "name": "Shoot",
+          "description": "Played on tap/click",
+          "type": "sound"
+        },
+        {
+          "key": "bounce",
+          "name": "Bounce",
+          "description": "Played when a bubble bounces off of a wall",
+          "type": "sound"
+        },
+        {
+          "key": "match",
+          "name": "Match",
+          "description": "Played when a match is made",
+          "type": "sound"
+        },
+        {
+          "key": "addRows",
+          "name": "Bubbles added",
+          "description": "Played when the turn timer hits 0, and new bubbles are added to the game",
+          "type": "sound"
+        },
+        {
+          "key": "music",
+          "name": "Background music",
+          "description": "The background music of your game",
+          "type": "sound"
+        }
+      ]
+    }
+  ]
+}

@@ -26,7 +26,7 @@ class Leaderboard extends Component {
         <div id={'leaderboard'} style={{ backgroundColor: Koji.config.colors.backgroundColor, color: Koji.config.colors.titleColor }}>
           <div className={'leaderboard-loading'}>
             <div>{'Error!'}</div>
-            <button onClick={() => window.setAppView('game')}>
+            <button onClick={() => window.setAppView('intro')}>
               {'Back to Game'}
             </button>
           </div>
@@ -47,13 +47,13 @@ class Leaderboard extends Component {
     }
 
     return (
-      <div id={'leaderboard'} style={{ backgroundColor: Koji.config.colors.backgroundColor }}>
+      <div id={'leaderboard'} style={{ backgroundColor: Koji.config.colors.backgroundColor, fontFamily:'Open Sans' }}>
         <div className={'leaderboard-container'}>
           <div class={'leaderboard-title'}>
             <div class={'leaderboard-title-text'} style={{ color: Koji.config.colors.titleColor }}>{"Top Scores"}</div>
             <div
               class={'leaderboard-close-button'}
-              onClick={() => { window.setAppView('game'); }}
+              onClick={() => { window.setAppView('intro'); }}
               style={{ color: Koji.config.colors.titleColor }}
             >
               {"Close"}

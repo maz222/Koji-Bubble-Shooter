@@ -2,6 +2,20 @@ import { h, Component } from 'preact';
 import PropTypes from 'prop-types';
 import Koji from '@withkoji/vcc';
 
+class HoverButton extends Component {
+	constructor(props) {
+		super(props);
+		this.state={active:false};
+	}
+	render() {
+		let styling = this.state.active ? this.props.activeStyle : this.props.inactiveStyle;
+		return(<button onClick={() => this.props.onClick()} style={styling} 
+			onMouseEnter={() => this.setState({active:true})} 
+			onMouseLeave={() => this.setState({active:false})}
+			>{this.props.content}</button>)
+	}
+}
+
 class SetScore extends Component {
     static propTypes = {
         score: PropTypes.number,
@@ -9,7 +23,7 @@ class SetScore extends Component {
 
     state = {
         email: '',
-        name: '',
+        name: '(name)',
         isSubmitting: false,
     };
 
@@ -22,12 +36,10 @@ class SetScore extends Component {
     }
 
     handleClose = () => {
-        window.setAppView("game");
+        window.setAppView("intro");
     }
 
     handleSubmit = (e) => {
-        e.preventDefault();
-
         if (this.state.name != "") {
             this.setState({ isSubmitting: true });
 
@@ -60,79 +72,97 @@ class SetScore extends Component {
     }
 
     render() {
-        return (
-            <div style={{ position: "absolute", backgroundColor: Koji.config.colors.backgroundColor, width: "100vw", height: "100vh" }}>
-                <div className="title"
-                    style={{ color: Koji.config.colors.titleColor }}>
-                    {"Submit To Leaderboard"}
-                </div>
+	let pageStyle = {
+		display:'flex',
+		flexDirection:'column',
+		justifyContent:'center',
+		alignItems:'center',
+		backgroundColor:Koji.config.colors.backgroundColor,
+		width:'100vw',
+		height:'100vh',
+	};
 
-                <div id={'leaderboard-set-score'} style={{ backgroundColor: Koji.config.colors.backgroundColor, borderColor: Koji.config.colors.titleColor }}>
-                    <form
-                        id={'score-form'}
-                        onSubmit={this.handleSubmit}
-                    >
-                        <div className={'input-wrapper'}>
-                            <label className={'label'} style={{ color: Koji.config.colors.titleColor }}>
-                                {"Score"}
-                            </label>
-                            <input
-                                disabled
-                                value={this.props.score}
-                                style={{ color: Koji.config.colors.titleColor, borderColor: Koji.config.colors.titleColor }}
-                            />
-                        </div>
+	let bannerStyle = {
+		color:'rgb(20,20,20)',
+		textAlign:'center',
+		fontSize:'4em',
+		minWidth:"calc(25% - 60px)",
+		padding:'20px',
+		backgroundColor:'rgb(245,245,245)',
+		marginBottom:'10px',
+		borderRadius:'5px',
+        fontFamily:'Open Sans'
+	};
 
-                        <div className={'input-wrapper'}>
-                            <label className={'label'} style={{ color: Koji.config.colors.titleColor }}>
-                                {"Name"}
-                            </label>
-                            <input
-                                onChange={(event) => {
-                                    this.setState({ name: event.target.value });
-                                }}
-                                type={'text'}
-                                value={this.state.name}
-                                style={{ color: Koji.config.colors.titleColor, borderColor: Koji.config.colors.titleColor }}
-                                ref={(input) => { this.nameInput = input; }}
-                            />
-                        </div>
+	let submitSheetStyle = {
+		display:'flex',
+		flexDirection:'column',
+		justifyContent:'space-around',
+		alignItems:'center',
+		backgroundColor:'rgb(245,245,245)',
+		borderRadius:'5px',
+		boxShadow:'0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+		minWidth:"calc(25% - 60px)",
+		minHeight:"calc(25% - 60px)",
+		padding: "40px 0 40px 0"
+	};
 
-                        {Koji.config.strings.emailInputEnabled ?
-                            <div className={'input-wrapper'}>
-                            <label style={{ color: Koji.config.colors.titleColor }}>{'Your Email Address (Private)'}</label>
-                            <input
-                                onChange={(event) => {
-                                    this.setState({ email: event.target.value });
-                                }}
-                                type={'email'}
-                                value={this.state.email}
-                                style={{ color: Koji.config.colors.titleColor, borderColor: Koji.config.colors.titleColor }}
-                            />
-                        </div>
-                        :<span></span>}
+	let scoreStyle = {
+		fontSize:'3em',
+		marginBottom:"40px",
+        fontFamily:'Open Sans'
+	};
 
-                        <button
-                            disabled={this.state.isSubmitting}
-                            onClick={this.handleSubmit}
-                            type={'submit'}
-                            style={{ backgroundColor: Koji.config.colors.buttonColor, color: Koji.config.colors.buttonTextColor }}
-                        >
-                           {this.state.isSubmitting ? "Submitting..." : "Submit"}
-                        </button>
-                    </form>
+	let nameStyle = {
+		fontSize:'1.5em',
+		borderRadius:'10px',
+		textAlign:'center',
+		padding:'10px',
+		width:"calc(80% - 40px)",
+		border:"3px solid black",
+		backgroundColor:'rgba(0,0,0,0)',
+		marginBottom:"40px",
+        fontFamily:'Open Sans'
+	}
 
-                    <button className="dismiss-button"
-                        onClick={this.handleClose}
-                        style={{ backgroundColor: Koji.config.colors.buttonColor, color: Koji.config.colors.buttonTextColor }}>
-                        {"Cancel"}
+	let submitStyle = {
+		padding:'20px',
+		fontSize:'1.25em',
+		border:"1px solid rgba(0,0,0,.25)",
+		borderRadius:'10px',
+		backgroundColor:'hsl(129,72%,53%)',
+		width:"calc(80% - 40px)",
+        fontFamily:'Open Sans'
+	}
+	let submitHoverStyle = {...submitStyle, backgroundColor:'hsl(129,72%,33%)'};
 
-                    </button>
+	let cancelStyle = {
+		padding:'20px',
+		fontSize:'1.25em',
+		backgroundColor:'rgb(221,75,49)',
+		marginTop:'50px',
+		border:0,
+		borderRadius:'10px',
+		boxShadow:'0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+		minWidth: "calc(calc(25% - 60px)*.66)",
+        fontFamily:'Open Sans'
+	}
+	let cancelHoverStyle = {...cancelStyle, backgroundColor:'rgb(144,42,24)'};
+
+	return(
+		<div id="leadboard-screen" style={pageStyle}>
+			<h1 style={bannerStyle}>High Score</h1>
+			<div id="submit-sheet" style={submitSheetStyle}>
+				<h1 style={scoreStyle}>{this.props.score}</h1>
+				<input type="text" style={nameStyle} value={this.state.name} onChange={(e) => this.setState({name:e.target.value})}></input>
+				<HoverButton inactiveStyle={submitStyle} activeStyle={submitHoverStyle} onClick={this.handleSubmit} content={this.state.isSubmitting ? "Submitting..." : "Submit"}/>
+			</div>
+			<HoverButton inactiveStyle={cancelStyle} activeStyle={cancelHoverStyle} onClick={this.handleClose} content={"Cancel"}/>
+		</div>
+	);
 
 
-                </div>
-            </div>
-        )
+
     }
 }
 

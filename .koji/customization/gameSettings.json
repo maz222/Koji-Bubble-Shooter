@@ -1,0 +1,71 @@
+{
+  "gameSettings": {
+    "gridColumns": "12",
+    "gridRows": "15",
+    "startingRows": "5",
+    "bubblePoints": "10",
+    "maxShots": "15",
+    "rowTimer": "3",
+    "rowsAdded": "3",
+    "gameOverContent": "Game Over!",
+    "emailInputEnabled": false
+  },
+  "@@editor": [
+    {
+      "key": "gameSettings",
+      "name": "Game Settings",
+      "icon": "💡",
+      "source": "gameSettings.json",
+      "fields": [
+        {
+          "key": "gridColumns",
+          "name": "Grid Columns",
+          "description": "How many columns of bubbles are contained within the playing field (X dimension)",
+          "type": "text"
+        },
+        {
+          "key": "gridRows",
+          "name": "Grid Rows",
+          "description": "How many rows of bubbles are contained within the playing field (y dimension)",
+          "type": "text"
+        },
+        {
+          "key": "startingRows",
+          "name": "Starting Rows",
+          "description": "How many rows of bubbles the grid starts with",
+          "type": "text"
+        },
+        {
+          "key": "bubblePoints",
+          "name": "Bubble Points",
+          "description": "How many points a single bubble is worth",
+          "type": "text"
+        },
+        {
+          "key": "maxShots",
+          "name": "Max Shots",
+          "description": "How many shots a player can fire before the game ends",
+          "type": "text"
+        },
+        {
+          "key": "rowTimer",
+          "name": "Row Turns",
+          "description": "How many shots a player can take without making a match before new rows of bubbles are added",
+          "type": "text"
+        },
+        {
+          "key": "rowsAdded",
+          "name": "Rows Added",
+          "description": "How many rows are added once the turn counter hits 0",
+          "type": "text"
+        },
+        {
+          "key": "gameOverContent",
+          "name": "Game Over Text",
+          "description": "The message that is displayed with a round/game is over",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

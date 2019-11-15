@@ -1,0 +1,79 @@
+{
+  "gameGraphics": {
+    "bubbles": [
+      "https://images.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/4kmkc-BlueBubble.png",
+      "https://images.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/w1on4-GreenBubble.png",
+      "https://images.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/u6ix9-RedBubble.png",
+      "https://images.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/sf7ng-YellowBubble.png",
+      "https://images.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/r8jpm-WhiteBubble.png"
+    ],
+    "backgroundImage": "",
+    "backgroundColor": "#333333",
+    "gridImage": "",
+    "gridColor": "#c72323",
+    "soundButton": "https://images.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/r1fu7-unmute.png",
+    "unmuteButton": "https://images.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/wa0r6-mute.png",
+    "backButton": "https://images.koji-cdn.com/1cb17ea7-c050-41de-97b1-f449806da225/fgb6l-backButton.png"
+  },
+  "@@editor": [
+    {
+      "key": "gameGraphics",
+      "name": "Game Graphics",
+      "icon": "",
+      "source": "gameGraphics.json",
+      "fields": [
+        {
+          "key": "bubbles",
+          "name": "Bubbles",
+          "description": "Bubbles (each image will be mapped to a new bubble)",
+          "type": "array<image>",
+          "arrayOptions": {
+            "isCollapsed": true
+          }
+        },
+        {
+          "key": "backgroundImage",
+          "name": "Background Image",
+          "description": "The overall background of your game (leave blank for no image)",
+          "type": "image"
+        },
+        {
+          "key": "backgroundColor",
+          "name": "Background Color",
+          "description": "The color of the overall background of your game (if no image)",
+          "type": "color"
+        },
+        {
+          "key": "gridImage",
+          "name": "Grid Image",
+          "description": "The background of the playing field (leave blank for no image)",
+          "type": "image"
+        },
+        {
+          "key": "gridColor",
+          "name": "Grid Color",
+          "description": "The background color of the playing field (if no image)",
+          "type": "color"
+        },
+        {
+          "key": "soundButton",
+          "name": "Sound Button",
+          "description": "Icon for the sound button",
+          "type": "image"
+        },
+        {
+          "key": "unmuteButton",
+          "name": "Unmute Button",
+          "description": "Icon for the unmute button",
+          "type": "image"
+        },
+        {
+          "key": "backButton",
+          "name": "Back Button",
+          "description": "Icon for the back button",
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
