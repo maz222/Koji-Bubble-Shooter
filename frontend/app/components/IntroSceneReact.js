@@ -40,7 +40,7 @@ class IntroScreen extends Component {
 		}
 
 		var titleStyle = {
-			fontSize:'4em',
+			fontSize: window.innerHeight > window.innerWidth ? '3em' : '4em',
 			color:Koji.config.introScreen.titleColor,
 			margin:'10px',
             fontFamily:'Open Sans'
