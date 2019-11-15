@@ -74,7 +74,7 @@ class BaseGameState {
             }
         }
         if(this.clicked) {
-            if(mouseY < height*.8) {
+            if(mouseY > height*.5) {
                 if(mouseX > width/2) {
                     this.cursor.adjustAngle(-1);
                 }
@@ -96,14 +96,6 @@ class BaseGameState {
         this.quitButton.render();
         this.soundButton.render();
         let gridDimensions = [this.grid.bubbleRadius*2*(this.grid.columns+.5),this.grid.bubbleRadius*2*this.grid.rows];
-        if(mouseX >= this.grid.origin[0] && mouseX <= this.grid.origin[0]+gridDimensions[0]) {
-            if(mouseY >= this.grid.origin[1] && mouseY <= this.grid.origin[1]+gridDimensions[1]) {
-                noCursor();
-            }
-        }
-        else {
-            cursor();
-        }
     }
     mousePress() {
         this.clicked = true;
