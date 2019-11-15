@@ -4,7 +4,7 @@
     "gridRows": "15",
     "startingRows": "5",
     "bubblePoints": "10",
-    "maxShots": "15",
+    "maxShots": "30",
     "rowTimer": "3",
     "rowsAdded": "3",
     "gameOverContent": "Game Over!",
