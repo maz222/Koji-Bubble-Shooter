@@ -67,19 +67,19 @@ class BaseGameState {
         this.topBar.update();
         if(keyIsPressed) {
             if(keyCode === LEFT_ARROW) {
-                this.cursor.adjustAngle(Koji.config.gameSettings.angleIncrement);
+                this.cursor.adjustAngle(Koji.config.gameSettings.angleIncrement * 60/frameRate());
             }
             if(keyCode === RIGHT_ARROW) {
-                this.cursor.adjustAngle(-Koji.config.gameSettings.angleIncrement);
+                this.cursor.adjustAngle(-Koji.config.gameSettings.angleIncrement * 60/frameRate());
             }
         }
         if(this.clicked) {
             if(mouseY > height*.5) {
                 if(mouseX > width/2) {
-                    this.cursor.adjustAngle(-Koji.config.gameSettings.angleIncrement);
+                    this.cursor.adjustAngle(-Koji.config.gameSettings.angleIncrement * 60/frameRate());
                 }
                 else {
-                    this.cursor.adjustAngle(Koji.config.gameSettings.angleIncrement);
+                    this.cursor.adjustAngle(Koji.config.gameSettings.angleIncrement * 60/frameRate());
                 }
             }
         }
