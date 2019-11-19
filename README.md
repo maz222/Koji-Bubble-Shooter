@@ -1,27 +1,20 @@
-# P5 Scaffold with Leaderboard
+# Bubble Pop!
 
-This is a great starting project for your P5 app.
+A relatively simple bubble shooter (Puzzle Bobble, etc) game.<br/>
+Use the arrows keys to aim/shoot on desktop.<br/>
+Use touch controls (bottom left/right to aim, top to shoot) on mobile.
 
-It's as bare-bones as I could make it while still including the Leaderboard system and some basic examples.
+## VCC's
 
-## Getting Started
-Main code is in *frontend/app/index.js*
+### Instead of fine tuning various settings, I've opted to try and make this as customizable as I could via VCCs.
 
-If you're not too familiar with P5.js, [there's some great documentation on their website](https://p5js.org/reference/)!
+Most of the grapics should be self explanatory, but the 'bubbles' are special.
 
-## Leaderboards
+-Using the 'bubbles' array VCC in Game Graphics, you can add as many different bubbles/game pieces as you want.<br/>
+-Each image will be used as a different object, so you can add as many (to make things more difficult), or as few (to make things easier) as you want.<br/>
+-Each bubble will have an equal probability of spawning, altho you can only shoot bubbles for colors that are already present on the board. (So if your board is all red bubbles, only red bubbles will spawn to be shot).<br/>
+-I recommend cropping your images to circles, as otherwise they will overlap.
 
-This app has a built-in backend Leaderboard system.
+The rest of the settings are contained with the Game Settings file where you can customize the size of the game board, how long you want the game to be, or even how tightly you can aim.
 
-Simplest way to use it:
-
-- Whenever the game ends and the player should submit their score, just call the function *submitScore()*
-- This will take the player to the *Set Score* screen.
-- *submitScore()* automatically takes the *score* variable that I've provided for keeping track of the score. If you wish to change that, you can edit the *submitScore()* function.
-- You can check out or remove Leaderboard entries in the *Database* section in the left bar of the Koji editor.
-- Leaderboard appearance inherits styles from the game, using Title Color and Button Colors.
-
-
-## Contact
-Check out my [other games and apps here](https://withkoji.com/~Svarog1389) and join the [Discord server](https://discord.gg/eQuMJF6) if you're in need of any kind of help or are just feeling chatty :)
-
+There's no background music by default, buy you can easily add it under Game Sounds.
