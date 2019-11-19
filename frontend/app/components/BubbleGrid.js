@@ -241,7 +241,6 @@ class BubbleGrid {
         for(var i in offsets) {
             var cellRow = row+offsets[i][0];
             var cellCol = col+offsets[i][1];
-            //console.log([cellRow, cellCol]);
             if(checkBounds(cellRow, cellCol, this.grid)) {
                 neighborIndices.push([cellRow, cellCol]);
             }
@@ -251,7 +250,6 @@ class BubbleGrid {
     //position - position of a bubble center
     checkCollision(position) {
         var cell = this.getCellFromPixel(position, true);
-        //console.log(cell);
         var neighbors = this.getNeighbors(cell);
         var px = [position[0]-this.origin[0],position[1]-this.origin[1]];
         for(var n in neighbors) {
@@ -305,7 +303,6 @@ class BubbleGrid {
             var cell1Colors = cell1.colors;
             var cell2Colors = new Set(cell2.colors);
             var match = cell1Colors.filter(c => cell2Colors.has(c)).length > 0;
-            //console.log(match);
             return match;
         }
         var row = cell[0];

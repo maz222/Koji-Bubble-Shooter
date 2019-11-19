@@ -369,7 +369,6 @@ class GameScene {
         this.create();
     }
     create() {
-        console.log("game init");
         var topDimensions = [width,height*.3];
         //setup grid
         var gridCols = parseInt(Koji.config.gameSettings.gridColumns);
@@ -392,7 +391,6 @@ class GameScene {
         for(var i=0; i<startingRows; i++) {
             this.grid.addRow();
         }
-        this.grid.print();
         //setup top section
         topDimensions[1] = height*.2;
         var maxShots = parseInt(Koji.config.gameSettings.maxShots);
