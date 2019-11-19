@@ -47,13 +47,13 @@ class MatchState extends BubbleBaseState {
         super(bubble);
         this.blinkCount = blinkCount * 2;
         this.pointValue = pointValue;
-        this.blinkDuration = Math.floor(blinkDuration * 60/Math.min(60,frameRate()));
-        this.textDuration = Math.floor(textDuration * 60/Math.min(60,frameRate()));
+        this.blinkDuration = blinkDuration;
+        this.textDuration = textDuration;
         this.timer = 0;
         var b1 = color(255,255,255,255);
-        var b2 = color(0,0,0,0);
-        var textStart = {color:b1,size:this.bubble.radius};
-        var textEnd = {color:b2, size:this.bubble.radius/2};
+        var b2 = color(20,20,20);
+        var textStart = {color:b1,size:this.bubble.radius*1.5};
+        var textEnd = {color:b1, size:this.bubble.radius*.5};
         var textVelocity = createVector(0,-1);
         this.text = new FadingText(this.pointValue,textStart,textEnd,this.bubble.position,textVelocity,Math.floor(textDuration*60/Math.min(60,frameRate())));
     }
