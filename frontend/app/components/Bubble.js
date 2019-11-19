@@ -28,7 +28,7 @@ class MoveState extends BubbleBaseState {
         var dotP = temp.dot(wallVector);
         wallVector.mult(dotP);
         wallVector.mult(2);
-        this.speed *= 1.25;
+        //this.speed *= 1.25;
         this.velocity.sub(wallVector);
     }
     update() {
