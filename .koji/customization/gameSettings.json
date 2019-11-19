@@ -5,7 +5,7 @@
     "startingRows": "5",
     "angleIncrement": 4,
     "bubblePoints": "10",
-    "maxShots": "15",
+    "maxShots": "20",
     "rowTimer": "3",
     "rowsAdded": "3",
     "gameOverContent": "Game Over!",
