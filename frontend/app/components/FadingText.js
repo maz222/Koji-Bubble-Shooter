@@ -26,14 +26,15 @@ class FadingText{
         this.position = origin;
         this.velocity = velocity;
         this.duration = duration;
-        //this.step = 100/this.duration/Math.min(60,frameRate());
-        this.step = 100/this.duration/frameRate();
+        this.timer = 1;
 
     }
     update() {
+        let step = this.duration/100;
+        console.log(step);
         this.currentInfo.currentFrame += 1;
-        this.currentInfo.color = lerpColor(this.currentInfo.color, this.endInfo.color, this.step);
-        this.currentInfo.size = lerp(this.currentInfo.size, this.endInfo.size, this.step);
+        this.currentInfo.color = lerpColor(this.currentInfo.color, this.endInfo.color, 1/frameRate());
+        this.currentInfo.size = lerp(this.currentInfo.size, this.endInfo.size, 1/frameRate());
         this.position.add(this.velocity);
     }
     render(offset=[0,0]) {
