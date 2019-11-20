@@ -56,7 +56,6 @@ function preload() {
 
 //This function runs once after the app is loaded
 function setup() {
-    frameRate(30);
     createCanvas(window.innerWidth,window.innerHeight);
     state = new GameScene();
 }

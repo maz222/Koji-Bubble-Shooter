@@ -64,7 +64,7 @@ class MatchGridState extends GridBaseState {
         for(var f in tempFloaters) {
             var bubble = this.gridObject.grid[tempFloaters[f][0]][tempFloaters[f][1]];
             if(bubble != null) {
-                bubble.setMoveState(createVector(0,1),this.gridObject.bubbleRadius/2.5);
+                bubble.setMoveState(createVector(0,1),this.gridObject.bubbleRadius*.66);
                 this.floaters.push(bubble);
                 this.gridObject.removeBubbleFromCount(bubble);
                 this.gridObject.grid[tempFloaters[f][0]][tempFloaters[f][1]] = null;

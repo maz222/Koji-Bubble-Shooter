@@ -26,7 +26,8 @@ class FadingText{
         this.position = origin;
         this.velocity = velocity;
         this.duration = duration;
-        this.step = 100/this.duration/Math.min(60,frameRate());
+        //this.step = 100/this.duration/Math.min(60,frameRate());
+        this.step = 100/this.duration/frameRate();
 
     }
     update() {

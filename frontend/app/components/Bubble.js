@@ -32,7 +32,8 @@ class MoveState extends BubbleBaseState {
     }
     update() {
         var temp = createVector(this.velocity.x,this.velocity.y);
-        temp.mult(this.speed);
+        //temp.mult(this.speed);
+        temp.mult(this.speed*frameRate()/100);
         this.bubble.position.add(temp);
         return this;
     }
