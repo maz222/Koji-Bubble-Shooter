@@ -43,7 +43,7 @@ class MoveState extends BubbleBaseState {
 }
 
 class MatchState extends BubbleBaseState {
-    constructor(bubble, pointValue, blinkCount=2, blinkDuration=5, textDuration=20) {
+    constructor(bubble, pointValue, blinkCount=2, blinkDuration=5, textDuration=30) {
         super(bubble);
         this.blinkCount = blinkCount * 2;
         this.pointValue = pointValue;
@@ -52,8 +52,8 @@ class MatchState extends BubbleBaseState {
         this.timer = 0;
         var b1 = color(255,255,255,255);
         var b2 = color(20,20,20);
-        var textStart = {color:b1,size:this.bubble.radius*1.5};
-        var textEnd = {color:b1, size:0};
+        var textStart = {color:b1,size:this.bubble.radius};
+        var textEnd = {color:b1, size:this.bubble.radius*2};
         var textVelocity = createVector(0,-1);
         this.text = new FadingText(this.pointValue,textStart,textEnd,this.bubble.position,textVelocity,textDuration);
     }

@@ -418,6 +418,7 @@ class GameScene {
         var cursorOrigin = [gridOrigin[0]+gridCols*bubbleRad+bubbleRad/2,gridOrigin[1]+bubbleRad*gridRows*2-bubbleRad*1.5];
         this.cursor = new Cursor(this.bubbleFact,cursorOrigin,gridCols*bubbleRad*2+bubbleRad,bubbleRad,cursorBubbleCount);
         this.reset = false;
+        gameData.toggleMute();
         gameData.playMusic();
 
         textSize(12);
