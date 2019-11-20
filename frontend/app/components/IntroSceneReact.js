@@ -33,7 +33,7 @@ class IntroScreen extends Component {
 			alignItems:'center',
 			backgroundColor:Koji.config.introScreen.backgroundColor,
 			width:'100%',
-			height:window.innerHeight+'px'
+			height:window.innerHeight + 'px'
 		};
 		if(Koji.config.introScreen.backgroundImage != "") {
 			pageStyle.backgroundImage = Koji.config.introScreen.backgroundImage
