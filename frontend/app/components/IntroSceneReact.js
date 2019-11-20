@@ -42,14 +42,15 @@ class IntroScreen extends Component {
 		var titleStyle = {
 			fontSize: window.innerHeight > window.innerWidth ? '3em' : '4em',
 			color:Koji.config.introScreen.titleColor,
-			margin:'10px',
-            fontFamily:'Open Sans'
+            fontFamily:'Open Sans',
+			margin:0
 		};
 
 		var descriptionStyle = {
+			marginLeft:'10px',
+			marginRight:'10px',
 			fontSize: window.innerHeight > window.innerWidth ? '1em' : '1.25em',
 			color:Koji.config.introScreen.descriptionColor,
-			margin:'10px',
 			whiteSpace:'pre-wrap',
 			padding: '30px 20px 30px 20px',
 			backgroundColor:'rgba(0,0,0,.25)',
