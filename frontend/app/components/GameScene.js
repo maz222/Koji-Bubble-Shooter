@@ -169,6 +169,16 @@ class ShootGameState extends BaseGameState {
         if(!this.checkWallCollision()) {
             if(this.grid.checkCollision([this.bubble.position.x,this.bubble.position.y])) {
                 var gridCell = this.grid.getCellFromPixel([this.bubble.position.x,this.bubble.position.y],true);
+                let t = this.bubble.state.velocity;
+                t.mult(-1);
+                console.log(t);
+                t.mult(this.bubble.state.speed);
+                let p = this.bubble.position;
+                while(this.grid.grid[gridCell[0]][gridCell[1]] != null) {
+                    console.log(this.bubble.position);
+                    this.bubble.position.add(t);   
+                    gridCell = this.grid.getCellFromPixel([this.bubble.position.x,this.bubble.position.y],true);                 
+                }
                 if(gridCell[0] == this.grid.rows-1 && this.grid.grid[gridCell[0]][gridCell[1]] != null) {
                     return new GameOverState(this.parent,this.topBar,this.grid,this.cursor,this.quitButton,this.soundButton);
                 }

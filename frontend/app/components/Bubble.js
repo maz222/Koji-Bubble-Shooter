@@ -28,13 +28,12 @@ class MoveState extends BubbleBaseState {
         var dotP = temp.dot(wallVector);
         wallVector.mult(dotP);
         wallVector.mult(2);
-        //this.speed *= 1.25;
         this.velocity.sub(wallVector);
     }
     update() {
         var temp = createVector(this.velocity.x,this.velocity.y);
         temp.mult(this.speed * 60/frameRate());
-        this.bubble.position.add(temp);;
+        this.bubble.position.add(temp);
         return this;
     }
     render(offset, scale=1) {
@@ -43,7 +42,7 @@ class MoveState extends BubbleBaseState {
 }
 
 class MatchState extends BubbleBaseState {
-    constructor(bubble, pointValue, blinkCount=2, blinkDuration=10, textDuration=60) {
+    constructor(bubble, pointValue, blinkCount=2, blinkDuration=5, textDuration=20) {
         super(bubble);
         this.blinkCount = blinkCount * 2;
         this.pointValue = pointValue;
@@ -53,7 +52,7 @@ class MatchState extends BubbleBaseState {
         var b1 = color(255,255,255,255);
         var b2 = color(20,20,20);
         var textStart = {color:b1,size:this.bubble.radius*1.5};
-        var textEnd = {color:b1, size:this.bubble.radius*.5};
+        var textEnd = {color:b1, size:0};
         var textVelocity = createVector(0,-1);
         this.text = new FadingText(this.pointValue,textStart,textEnd,this.bubble.position,textVelocity,Math.floor(textDuration*60/Math.min(60,frameRate())));
     }

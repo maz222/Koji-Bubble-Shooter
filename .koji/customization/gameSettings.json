@@ -3,7 +3,7 @@
     "gridColumns": "12",
     "gridRows": "15",
     "startingRows": "5",
-    "angleIncrement": 4,
+    "angleIncrement": 2,
     "bubblePoints": "10",
     "maxShots": "20",
     "rowTimer": "3",
