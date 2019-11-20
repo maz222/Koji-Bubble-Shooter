@@ -33,8 +33,7 @@ class MoveState extends BubbleBaseState {
     update() {
         var temp = createVector(this.velocity.x,this.velocity.y);
         //temp.mult(this.speed);
-        let bonus = frameRate() < 40 ? 4 : 1;
-        temp.mult(this.speed*frameRate()/100 * bonus);
+        temp.mult(this.speed*1/frameRate());
         this.bubble.position.add(temp);
         return this;
     }
@@ -56,7 +55,7 @@ class MatchState extends BubbleBaseState {
         var textStart = {color:b1,size:this.bubble.radius*1.5};
         var textEnd = {color:b1, size:0};
         var textVelocity = createVector(0,-1);
-        this.text = new FadingText(this.pointValue,textStart,textEnd,this.bubble.position,textVelocity,Math.floor(textDuration*60/Math.min(60,frameRate())));
+        this.text = new FadingText(this.pointValue,textStart,textEnd,this.bubble.position,textVelocity,textDuration);
     }
     update() {
         this.timer += 1;

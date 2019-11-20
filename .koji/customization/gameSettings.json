@@ -3,7 +3,7 @@
     "gridColumns": "12",
     "gridRows": "15",
     "startingRows": "5",
-    "angleIncrement": 2,
+    "angleIncrement": 200,
     "bubblePoints": "10",
     "maxShots": "20",
     "rowTimer": "3",
@@ -39,12 +39,12 @@
         {
           "key": "angleIncrement",
           "name": "Aiming increment",
-          "description": "How much the aiming cursor shifts with each press (in degrees).",
+          "description": "How tight the aiming cursor is. Smaller values give more control.",
           "type": "range",
           "typeOptions": {
-            "min": 1,
-            "max": 20,
-            "step": 1
+            "min": 100,
+            "max": 400,
+            "step": 20
           }
         },
         {
