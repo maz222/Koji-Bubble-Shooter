@@ -1,20 +1,15 @@
-# Bubble Pop!
+# Tap and Match
+A game template for [Koji](https://withkoji.com/) based on Puzzle Bobble [(video)](https://www.youtube.com/watch?v=F1I0lzM_UZI).  Available on Koji [here](https://withkoji.com/~maz2/bubble-pop) 
 
-A relatively simple bubble shooter (Puzzle Bobble, etc) game.<br/>
-Use the arrows keys to aim/shoot on desktop.<br/>
-Use touch controls (bottom left/right to aim, top to shoot) on mobile.
+*(Koji has since drastically changed both their business model and website layout, so some features / UI may be outdated).*
 
-## VCC's
+Uses **React**, **[P5.js](https://p5js.org/)**, **JavaScript**
 
-### Instead of fine tuning various settings, I've opted to try and make this as customizable as I could via VCCs.
+Users can customize their own version game by using their own
 
-Most of the grapics should be self explanatory, but the 'bubbles' are special.
+    images
+    sounds
+    text
+    game settings (grid size, number of shots, bubble colors, etc)
 
--Using the 'bubbles' array VCC in Game Graphics, you can add as many different bubbles/game pieces as you want.<br/>
--Each image will be used as a different object, so you can add as many (to make things more difficult), or as few (to make things easier) as you want.<br/>
--Each bubble will have an equal probability of spawning, altho you can only shoot bubbles for colors that are already present on the board. (So if your board is all red bubbles, only red bubbles will spawn to be shot).<br/>
--I recommend cropping your images to circles, as otherwise they will overlap.
-
-The rest of the settings are contained with the Game Settings file where you can customize the size of the game board, how long you want the game to be, and more.
-
-There's no background music by default, buy you can easily add it under Game Sounds.
+via the Koji platform.
